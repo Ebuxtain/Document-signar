@@ -2,12 +2,9 @@
 
 import React, { useState } from "react";
 import FileUpload from "../components/FileUpload";
-import AnnotationToolbar from "../components/AnnotationToolbar";
-import { ToolType } from "../app/types";
 
 export default function Home() {
   const [file, setFile] = useState<string | null>(null);
-  const [selectedTool, setSelectedTool] = useState<ToolType>("highlight");
 
   const handleFileUpload = (pdf: File) => {
     setFile(URL.createObjectURL(pdf));
@@ -34,13 +31,6 @@ export default function Home() {
       <div className="w-full max-w-lg">
         <FileUpload onFileUpload={handleFileUpload} />
       </div>
-
-      {/* Annotation Toolbar */}
-      {file && (
-        <div className="w-full flex justify-center mt-4 px-2 sm:px-4">
-          <AnnotationToolbar onSelectTool={setSelectedTool} />
-        </div>
-      )}
 
       {/* Display the PDF in viewport */}
       {file && (
