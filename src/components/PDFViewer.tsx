@@ -1,6 +1,6 @@
 
 
-'use client';
+// 'use client';
 
 // import { Document, Page, pdfjs } from "react-pdf";
 // import "react-pdf/dist/esm/Page/TextLayer.css";
